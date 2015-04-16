@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"
         android:text="Red"
         android:id="@+id/buttonRed"
-        android:layout_marginTop="80dp"
         android:layout_below="@+id/lockscreenTextClock"
+        android:layout_marginTop="100dp"
         android:layout_toLeftOf="@+id/lockscreenTextClock"
         android:layout_toStartOf="@+id/lockscreenTextClock" />
 
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:text="Blue"
         android:id="@+id/buttonBlue"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:layout_below="@+id/lockscreenTextClock"
         android:layout_toRightOf="@+id/lockscreenTextClock"
         />
@@ -57,15 +57,38 @@
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/buttonRed"
         android:layout_alignStart="@+id/buttonRed"
-        android:layout_marginBottom="56dp" />
+        android:layout_marginBottom="60dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Yellow"
         android:id="@+id/buttonYellow"
-        android:layout_alignBottom="@+id/buttonGreen"
-        android:layout_toRightOf="@+id/lockscreenTextClock"
-        android:layout_toEndOf="@+id/lockscreenTextClock" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/buttonBlue"
+        android:layout_alignStart="@+id/buttonBlue"
+        android:layout_marginBottom="60dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clr"
+        android:id="@+id/buttonClear"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/buttonYellow"
+        android:layout_toEndOf="@+id/buttonYellow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/displayText"
+        android:layout_alignBottom="@+id/buttonClear"
+        android:layout_alignLeft="@+id/buttonGreen"
+        android:layout_alignStart="@+id/buttonGreen"
+        android:layout_alignRight="@+id/buttonYellow"
+        android:layout_alignEnd="@+id/buttonYellow"
+        android:layout_alignTop="@+id/buttonClear" />
 
 </RelativeLayout>
