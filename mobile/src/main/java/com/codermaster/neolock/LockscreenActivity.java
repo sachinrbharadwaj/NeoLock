@@ -25,16 +25,16 @@ public class LockscreenActivity extends ActionBarActivity {
         Button blueButton = (Button) findViewById(R.id.buttonBlue);
         Button greenButton = (Button) findViewById(R.id.buttonGreen);
         Button yellowButton = (Button) findViewById(R.id.buttonYellow);
-        Button clearButton = (Button) findViewById(R.id.buttonClear);
         final TextView displayText = (TextView) findViewById(R.id.displayText);
 
+        findViewById(R.id.lockscreenTextClock).setVisibility(View.INVISIBLE);
         final String key = "bbrrg";
 
         redButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 keyData.setUncodedKey(keyData.getUncodedKey()+"r");
-                if(keyData.getUncodedKey().equalsIgnoreCase(key))
+                if(keyData.getUncodedKey().contains(key))
                     displayText.setText("SUCCESS.....");
                 else
                     displayText.setText(keyData.getUncodedKey());
@@ -44,7 +44,7 @@ public class LockscreenActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 keyData.setUncodedKey(keyData.getUncodedKey()+"b");
-                if(keyData.getUncodedKey().equalsIgnoreCase(key))
+                if(keyData.getUncodedKey().contains(key))
                     displayText.setText("SUCCESS.....");
                 else
                     displayText.setText(keyData.getUncodedKey());
@@ -54,7 +54,7 @@ public class LockscreenActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 keyData.setUncodedKey(keyData.getUncodedKey()+"g");
-                if(keyData.getUncodedKey().equalsIgnoreCase(key))
+                if(keyData.getUncodedKey().contains(key))
                     displayText.setText("SUCCESS.....");
                 else
                     displayText.setText(keyData.getUncodedKey());
@@ -64,18 +64,10 @@ public class LockscreenActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 keyData.setUncodedKey(keyData.getUncodedKey()+"y");
-                if(keyData.getUncodedKey().equalsIgnoreCase(key))
+                if(keyData.getUncodedKey().contains(key))
                     displayText.setText("SUCCESS.....");
                 else
                     displayText.setText(keyData.getUncodedKey());
-            }
-        });
-
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                keyData.setUncodedKey("");
-                displayText.setText(keyData.getUncodedKey());
             }
         });
 
