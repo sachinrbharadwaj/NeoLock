@@ -28,7 +28,7 @@ public class LockscreenActivity extends ActionBarActivity {
         final TextView displayText = (TextView) findViewById(R.id.displayText);
 
         findViewById(R.id.lockscreenTextClock).setVisibility(View.INVISIBLE);
-        final String key = "bbrrg";
+        final String key = "bbbb";
 
         redButton.setOnClickListener(new View.OnClickListener() {
             @Override
