@@ -1,10 +1,12 @@
 package com.codermaster.neolock;
 
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,49 +27,60 @@ public class LockscreenActivity extends ActionBarActivity {
         Button blueButton = (Button) findViewById(R.id.buttonBlue);
         Button greenButton = (Button) findViewById(R.id.buttonGreen);
         Button yellowButton = (Button) findViewById(R.id.buttonYellow);
-        final TextView displayText = (TextView) findViewById(R.id.displayText);
+        final TextView displayText = (TextView) findViewById(R.id.headingText);
 
-        findViewById(R.id.lockscreenTextClock).setVisibility(View.INVISIBLE);
-        final String key = "bbbb";
+        final String key = "rbgy";
 
+        redButton.setBackgroundColor(-65536);
         redButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                keyData.setUncodedKey(keyData.getUncodedKey()+"r");
-                if(keyData.getUncodedKey().contains(key))
+                keyData.setUncodedKey(keyData.getUncodedKey() + "r");
+                if(keyData.getUncodedKey().equalsIgnoreCase(key)) {
                     displayText.setText("SUCCESS.....");
-                else
+                    keyData.setUncodedKey("");
+                } else {
                     displayText.setText(keyData.getUncodedKey());
+                }
             }
         });
+        blueButton.setBackgroundColor(-16776961);
         blueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                keyData.setUncodedKey(keyData.getUncodedKey()+"b");
-                if(keyData.getUncodedKey().contains(key))
+                keyData.setUncodedKey(keyData.getUncodedKey() + "b");
+                if(keyData.getUncodedKey().equalsIgnoreCase(key)) {
                     displayText.setText("SUCCESS.....");
-                else
+                    keyData.setUncodedKey("");
+                } else {
                     displayText.setText(keyData.getUncodedKey());
+                }
             }
         });
+        greenButton.setBackgroundColor(-16711936);
         greenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                keyData.setUncodedKey(keyData.getUncodedKey()+"g");
-                if(keyData.getUncodedKey().contains(key))
+                keyData.setUncodedKey(keyData.getUncodedKey() + "g");
+                if(keyData.getUncodedKey().equalsIgnoreCase(key)) {
                     displayText.setText("SUCCESS.....");
-                else
+                    keyData.setUncodedKey("");
+                } else {
                     displayText.setText(keyData.getUncodedKey());
+                }
             }
         });
+        yellowButton.setBackgroundColor(-256);
         yellowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 keyData.setUncodedKey(keyData.getUncodedKey()+"y");
-                if(keyData.getUncodedKey().contains(key))
+                if(keyData.getUncodedKey().equalsIgnoreCase(key)) {
                     displayText.setText("SUCCESS.....");
-                else
+                    keyData.setUncodedKey("");
+                } else {
                     displayText.setText(keyData.getUncodedKey());
+                }
             }
         });
 
