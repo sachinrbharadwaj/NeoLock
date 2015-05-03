@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridLayout"
+        android:layout_marginTop="72dp"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/buttonRed"
+            android:id="@+id/buttonRed"
+            android:layout_row="0"
+            android:layout_column="0" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/buttonBlue"
+            android:id="@+id/buttonBlue"
+            android:layout_row="0"
+            android:layout_column="1" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/buttonGreen"
+            android:id="@+id/buttonGreen"
+            android:layout_row="1"
+            android:layout_column="0" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/buttonYellow"
+            android:id="@+id/buttonYellow"
+            android:layout_row="1"
+            android:layout_column="1" />
+    </GridLayout>
+
+</RelativeLayout>

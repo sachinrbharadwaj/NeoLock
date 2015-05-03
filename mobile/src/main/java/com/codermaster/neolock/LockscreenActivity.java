@@ -3,6 +3,7 @@ package com.codermaster.neolock;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,31 +18,26 @@ import java.util.Date;
 
 public class LockscreenActivity extends ActionBarActivity {
 
+    final KeyData keyData = new KeyData();
+    Button redButton = (Button) findViewById(R.id.buttonRed);
+    Button blueButton = (Button) findViewById(R.id.buttonBlue);
+    Button greenButton = (Button) findViewById(R.id.buttonGreen);
+    Button yellowButton = (Button) findViewById(R.id.buttonYellow);
+    final TextView displayText = (TextView) findViewById(R.id.headingText);
+    final String key = "rbgy";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lockscreen);
 
-        final KeyData keyData = new KeyData();
-        Button redButton = (Button) findViewById(R.id.buttonRed);
-        Button blueButton = (Button) findViewById(R.id.buttonBlue);
-        Button greenButton = (Button) findViewById(R.id.buttonGreen);
-        Button yellowButton = (Button) findViewById(R.id.buttonYellow);
-        final TextView displayText = (TextView) findViewById(R.id.headingText);
-
-        final String key = "rbgy";
-
         redButton.setBackgroundColor(-65536);
         redButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                keyData.setUncodedKey(keyData.getUncodedKey() + "r");
-                if(keyData.getUncodedKey().equalsIgnoreCase(key)) {
-                    displayText.setText("SUCCESS.....");
-                    keyData.setUncodedKey("");
-                } else {
-                    displayText.setText(keyData.getUncodedKey());
-                }
+            keyData.setUncodedKey(keyData.getUncodedKey() + "r");
+                compareKeyAlterDisplayText();
+
             }
         });
         blueButton.setBackgroundColor(-16776961);
@@ -49,12 +45,7 @@ public class LockscreenActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 keyData.setUncodedKey(keyData.getUncodedKey() + "b");
-                if(keyData.getUncodedKey().equalsIgnoreCase(key)) {
-                    displayText.setText("SUCCESS.....");
-                    keyData.setUncodedKey("");
-                } else {
-                    displayText.setText(keyData.getUncodedKey());
-                }
+                compareKeyAlterDisplayText();
             }
         });
         greenButton.setBackgroundColor(-16711936);
@@ -62,12 +53,7 @@ public class LockscreenActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 keyData.setUncodedKey(keyData.getUncodedKey() + "g");
-                if(keyData.getUncodedKey().equalsIgnoreCase(key)) {
-                    displayText.setText("SUCCESS.....");
-                    keyData.setUncodedKey("");
-                } else {
-                    displayText.setText(keyData.getUncodedKey());
-                }
+                compareKeyAlterDisplayText();
             }
         });
         yellowButton.setBackgroundColor(-256);
@@ -75,15 +61,19 @@ public class LockscreenActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 keyData.setUncodedKey(keyData.getUncodedKey()+"y");
-                if(keyData.getUncodedKey().equalsIgnoreCase(key)) {
-                    displayText.setText("SUCCESS.....");
-                    keyData.setUncodedKey("");
-                } else {
-                    displayText.setText(keyData.getUncodedKey());
-                }
+                compareKeyAlterDisplayText();
             }
         });
 
+    }
+
+    private void compareKeyAlterDisplayText(){
+        if(keyData.getUncodedKey().equalsIgnoreCase(key)) {
+            displayText.setText("SUCCESS.....");
+            keyData.setUncodedKey("");
+        } else {
+            displayText.setText(keyData.getUncodedKey());
+        }
     }
 
 }

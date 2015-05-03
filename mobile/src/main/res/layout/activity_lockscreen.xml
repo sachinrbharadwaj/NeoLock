@@ -20,47 +20,18 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Click your pattern"
-        android:layout_marginTop="220dp"
         android:id="@+id/headingText"
-        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        />
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:text="Red"
-        android:id="@+id/buttonRed"
-        android:layout_below="@+id/headingText"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/lockscreenAnalogClock"
+        android:layout_alignStart="@+id/lockscreenAnalogClock" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:text="Blue"
-        android:id="@+id/buttonBlue"
-        android:layout_below="@+id/buttonRed"
-        android:layout_alignRight="@+id/buttonRed"
-        android:layout_alignEnd="@+id/buttonRed" />
-
-    <Button
-        android:layout_width="fill_parent"
+    <fragment
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Green"
-        android:id="@+id/buttonGreen"
-        android:layout_below="@+id/buttonBlue"
-        android:layout_alignLeft="@+id/buttonBlue"
-        android:layout_alignStart="@+id/buttonBlue" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:text="Yellow"
-        android:id="@+id/buttonYellow"
-        android:layout_below="@+id/buttonGreen"
-        android:layout_alignLeft="@+id/buttonGreen"
-        android:layout_alignStart="@+id/buttonGreen" />
-
+        android:name="com.codermaster.neolock.BarLayoutFragment"
+        android:id="@+id/fragment"
+        tools:layout="@layout/bar_style_input_layout"
+        android:layout_below="@+id/headingText"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
